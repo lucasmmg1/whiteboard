@@ -1,5 +1,5 @@
 int[][] grid;
-int resolution = 2;
+int resolution = 5;
 int cols;
 int rows;
 
@@ -13,13 +13,14 @@ void setup()
 
 void draw()
 {  
+  background(255);
   noStroke();
   
   for (int i = 0; i < cols; i++)
   { 
     for (int j = 0; j < rows; j++)
     {
-      fill(grid[i][j]*255);
+      fill(255 - grid[i][j]*255);
       square(i * resolution, j * resolution, resolution);
     }
   }
