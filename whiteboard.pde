@@ -1,13 +1,14 @@
+int RESOLUTION = 5;
+
 int[][] grid;
-int resolution = 5;
 int cols;
 int rows;
 
 void setup()
 {
   size(400, 400);
-  cols = width / resolution;
-  rows = height / resolution;
+  cols = width / RESOLUTION;
+  rows = height / RESOLUTION;
   grid = make2DArray(cols, rows);
 }
 
@@ -21,7 +22,7 @@ void draw()
     for (int j = 0; j < rows; j++)
     {
       fill(255 - grid[i][j]*255);
-      square(i * resolution, j * resolution, resolution);
+      square(i * RESOLUTION, j * RESOLUTION, RESOLUTION);
     }
   }
   
@@ -74,8 +75,8 @@ void draw()
 }
 void mouseDragged()
 {
-  int col = floor(mouseX / resolution);
-  int row = floor(mouseY / resolution);
+  int col = floor(mouseX / RESOLUTION);
+  int row = floor(mouseY / RESOLUTION);
   
   if ((col < 0 || col >= cols) || (row < 0) || (row >= rows)) return;
   grid[col][row] = 1;
